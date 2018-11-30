@@ -14,24 +14,12 @@ export class AppComponent {
  
   itemValue = '';
   items: Observable<any[]>;
-  Standings: FirebaseObjectObservable<any[]>;
-  labels='';
-
+ 
   constructor(public db: AngularFireDatabase) {
-
     this.items = db.list('items').valueChanges();
-
-
-  db.object('/message')
-    .valueChanges()
-    .subscribe(res => {
-        console.log(res)//should give you the array of percentage. 
-        this.labels = res;
-    })
   }
  
   onSubmit() {
-   const items = this.db.list('items');
     this.db.list('/items').push({ contenido: this.itemValue });
   }
 }

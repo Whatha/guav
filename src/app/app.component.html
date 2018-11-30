@@ -5,7 +5,6 @@
 <div class="container-fluid">
   <div style="color: blue;">
     <h1>{{title}}</h1>
-    <h1>{{labels.name}}</h1>
     <h3>{{description}}</h3>
   </div>
  
@@ -27,9 +26,6 @@
   <div class="col-md-3">
     <pre *ngFor="let item of items | async">{{item.contenido}}</pre>
   </div>
-  <div *ngIf="item$ | async as item">
-  First name is {{ item?.test }}
-</div>
 </div>
 
 
